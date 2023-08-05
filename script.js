@@ -12,6 +12,7 @@
 // Dice = coin-bonus ml-1 inline-block h-24 w-24 rounded-full
 // T = coin-t ml-1 inline-block h-24 w-24 rounded-full
 
+// Balance - document.getElementsByClassName("user-action absolute")[0].innerText
 
 
 ///  GLOBAL VARIABLES  \\\
