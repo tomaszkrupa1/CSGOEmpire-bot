@@ -5,8 +5,8 @@
   "manifest_version": 3,
   "author": "Tomasz Krupa",
   "icons": {
-    "32": "/assets/icons/32.png",
-    "192": "/assets/icons/192.png"
+    "32": "/icons/32.png",
+    "192": "/icons/192.png"
   },
   "permissions": ["activeTab"],
 
