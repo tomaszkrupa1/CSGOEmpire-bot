@@ -2,7 +2,7 @@
   "name": "EAB",
   "description": "CSGO Empire Auto Better Bot",
   "version": "1.0",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "author": "Tomasz Krupa",
   "icons": {
     "32": "/icons/32.png",
