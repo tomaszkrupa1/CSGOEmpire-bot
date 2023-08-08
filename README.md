@@ -21,7 +21,8 @@ I built this project as I wanted to experiment with webpage manipulation as well
 I have gained confidence in
 
 - Analysing and disecting webpages
--
+- Message Passing
+- Content & Background scripting
 
 ### If I had more time...
 

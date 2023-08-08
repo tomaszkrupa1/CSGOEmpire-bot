@@ -8,15 +8,21 @@
     "32": "/icons/32.png",
     "192": "/icons/192.png"
   },
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "contextMenus"],
+
+  "background": {
+    "persistent": true,
+    "scripts": ["background.js"]
+  },
 
   "content_scripts": [
     {
       "matches": ["https://www.csgoempire.com/*"],
-      "js": ["script.js", "menu.js"]
+      "js": ["content.js"]
     }
   ],
   "browser_action": {
-    "default_popup": "menu.html"
+    "default_popup": "popup.html",
+    "default_title": "EAB"
   }
 }
