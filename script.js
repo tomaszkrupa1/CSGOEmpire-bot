@@ -20,6 +20,11 @@
 // 10 Button - document.getElementsByClassName("bet-input__control")[4]
 // 100 Button - document.getElementsByClassName("bet-input__control")[5]
 
+// Process 1 -
+// Process 2 -
+// Process 3 -
+// Process 4 -
+
 ///  GLOBAL VARIABLES  \\\
 
 let initialBet = 0.01; // Later to be turned into user input from menu
@@ -27,7 +32,7 @@ let lossMultiplier = 2; // Later to be turned into user input from menu
 let newBet = 0;
 
 ///  FUNCTIONS & SCRIPTS   \\\
- 
+
 //Check to see if I can bet
 
 //Place initial bet
@@ -41,38 +46,60 @@ let newBet = 0;
 ///   FUNCTIONS   \\\
 
 function main() {
+  let processCounter = 1;
+  let currentBet = 0.01;
+
+  placeBet();
+
+  setInterval(function () {
+    if (processCounter == 1) {
+      if (hasNewRoundStarted()) {
+        processCounter = 2;
+      }
+    } else if (processCounter == 2) {
+      CT();
+    } else if (processCounter == 3) {
+      placeBet();
+    } else if (
+      document.getElementsByClassName("text-2xl font-bold font-numeric")[0]
+        .innerText > 11
+    ) {
+      processCounter = 4;
+    } else if (processCounter == 4) {
+      if (endOfRound()) {
+        document.getElementsByClassName("bet-btn")[0].click();
+        processCounter = 1;
+      }
+    }
+  }, 1000);
 
   //Checks to see if the round timer is above 17, if so, returns true
-function hasNewRoundStarted() {
-  document.getElementsByClassName("bet-input__control")[0].click();
- if (
+  function hasNewRoundStarted() {
+    document.getElementsByClassName("bet-input__control")[0].click();
+    if (
       document.getElementsByClassName("text-2xl font-bold font-numeric")[0]
         .innerText > 17
     ) {
-      console.log("true");
-    
+      return true;
     } else {
-      console.log("false");
-      
+      return false;
     }
-}
-
-//Checks to see if the round timer is below 10, if so, returns true
-function endOfBetting() {
-  if (
-    document.getElementsByClassName("text-2xl font-bold font-numeric")[0]
-      .innerText < 10
-  ) {
-    console.log("true");
-   
-  } else {
-    console.log("false");
-   
   }
-}
 
-// Returns the bet amount in an array reversed format
-function numberToArray(number) {
+  //Checks to see if the round timer is below 10, if so, returns true
+  function endOfRound() {
+    if (
+      document.getElementsByClassName("text-2xl font-bold font-numeric")[0]
+        .innerText < 10
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // Returns the bet amount in an array reversed format
+  function numberToArray(number) {
     let array = number.toString().split("");
     let intedArray = array.map((amount) => parseInt(amount));
     let filteredArray = intedArray.filter(function (value) {
@@ -81,9 +108,9 @@ function numberToArray(number) {
     return filteredArray.reverse();
   }
 
-// Places bet, uses buttons and bet array to place amount
- function placeBet() {
-    let returnLog = numberToArray(currentBet); 
+  // Places bet, uses buttons and bet array to place amount
+  function placeBet() {
+    let returnLog = numberToArray(currentBet);
 
     let buttonNumber = 0;
 
@@ -93,15 +120,29 @@ function numberToArray(number) {
           .getElementsByClassName("bet-input__control")
           [buttonNumber + 1].click();
       }
-  
+
       buttonNumber++;
     }
 
     processCounter = 4;
   }
 
+  // If last round was CT, resets the bet back to inital, if not, doubles.
+  function CT() {
+    if (
+      document.getElementsByClassName("previous-rolls-item")[19].children[0]
+        .className == "coin-ct ml-1 inline-block h-24 w-24 rounded-full"
+    ) {
+      currentBet = 0.01;
 
-};
+      for (i = 0; i < currentBet * 100; i++) {
+        document.getElementsByClassName("bet-input__control")[1].click();
+      }
 
-
-main()
+      processCounter = 0;
+    } else {
+      currentBet *= 2;
+      processCounter = 3;
+    }
+  }
+}
