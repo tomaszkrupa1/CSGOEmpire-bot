@@ -23,7 +23,21 @@ I have gained confidence in
 - Analysing and disecting webpages
 - Message Passing
 - Content & Background scripting
+- Chrome API
 
 ### If I had more time...
 
-In the future, I would like to...
+In the future updates I would like to...
+
+- Remove bloat code
+- Make a side selector to choose which colour to bet on
+- Add a counter of how many wins and how many losses
+- Add functionality for making Side/Dice combo bets
+- Make sure the button label is stored in Chrome Storage
+- Add pattern functionality
+- Stop bot after X amount of losses/wins/profit/loss etc.
+- Make an icon/logo
+- Update icons in pack
+- Finish the styling
+
+- Publish to chrome store
