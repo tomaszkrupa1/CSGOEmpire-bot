@@ -39,5 +39,6 @@ In the future updates I would like to...
 - Make an icon/logo
 - Update icons in pack
 - Finish the styling
+- Add dice chaser
 
 - Publish to chrome store
