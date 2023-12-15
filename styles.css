@@ -1,3 +1,5 @@
+/* GLOBAL SETTINGS */
+
 * {
   box-sizing: border-box;
   color: white;
@@ -17,14 +19,23 @@ body {
 
 h1 {
   color: #FFF;
+  margin-bottom: 30px;
 }
 
 input {
-  border-radius: .25rem 0 0 .25rem;
+  border-radius: 4px;
   background-color: #141419;
   border-color: #333541;
   border-width: 1px;
   width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+input:disabled {
+  background-color: #333541; /* Change as needed */
+  color: #999;
+  cursor: not-allowed;
 }
 
 input[type="radio"] {
@@ -39,6 +50,7 @@ input[type="radio"]:checked + label img {
 
 .mode-div {
   width: 100%;
+  margin: 20px 0px 20px 0;
 }
 
 .mode-buttons {
@@ -50,10 +62,9 @@ input[type="radio"]:checked + label img {
 
 .mode-buttons img {
   width: 92%;
-  margin-right: 0px;
   box-shadow: 0 0 10px transparent, 0 0 15px transparent, 0 0 20px transparent, 0 0 25px transparent, 0 0 30px transparent;
   cursor: pointer;
-
+  margin-bottom: 20px;
 }
 
 .settings-div {
@@ -63,7 +74,6 @@ input[type="radio"]:checked + label img {
 
 .settings {
   margin: 10px;
-  padding: 50;;
 }
 
 .start-div {
@@ -92,24 +102,32 @@ input[type="radio"]:checked + label img {
   align-items: center;
   cursor: pointer;
   width: 100%;
-  padding-right: 10px;
-  margin-right: 10px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .start:hover, .stop:hover {
   filter: brightness(110%);
 }
 
-  /* 
-  
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+  /* 
   #9293A6 - TEXT
   #24252F - 
   #333541 - 
   #262832 - LIGHTER
   #1A1C24 - MID MAIN BACKGROUND COLOR
   #141419 - DARK
-  
   #16171C
-  
   */

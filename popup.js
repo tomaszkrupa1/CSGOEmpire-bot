@@ -1,15 +1,53 @@
 document.getElementById('startStopButton').addEventListener('click', function() {
   var button = document.getElementById('startStopButton');
+  var initialBetInput = document.getElementById('initialBet');
+  var lossMultiplierInput = document.getElementById('lossMultiplier');
   if (button.innerHTML === "START") {
     button.innerHTML = "STOP";
     button.classList.remove("start");
     button.classList.add("stop");
+
+    // Disable the input fields
+    initialBetInput.disabled = true;
+    lossMultiplierInput.disabled = true;
   } else {
     button.innerHTML = "START";
     button.classList.remove("stop");
     button.classList.add("start");
+
+     // Enable the input fields
+     initialBetInput.disabled = false;
+     lossMultiplierInput.disabled = false;
   }
 });
+
+// Get the third radio button and the lossMultiplier field
+var radioButton = document.getElementById('d-coin');
+var lossMultiplierField = document.getElementById('lossMultiplier').parentNode;
+
+// Add an event listener to the radio button
+radioButton.addEventListener('change', function() {
+  // If the radio button is selected, hide the lossMultiplier field
+  if (radioButton.checked) {
+    lossMultiplierField.style.display = 'none';
+  } else {
+    // If the radio button is not selected, show the lossMultiplier field
+    lossMultiplierField.style.display = 'block';
+  }
+});
+
+// Get all the radio buttons
+var radioButtons = document.getElementsByName('mode');
+
+// Add an event listener to each radio button
+for (var i = 0; i < radioButtons.length; i++) {
+  radioButtons[i].addEventListener('change', function() {
+    // If the third radio button is not selected, show the lossMultiplier field
+    if (!radioButton.checked) {
+      lossMultiplierField.style.display = 'block';
+    }
+  });
+}
 
 /*
 
