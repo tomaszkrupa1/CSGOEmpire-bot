@@ -44,3 +44,4 @@ In the future updates I would like to...
 - Publish to chrome store
 - If dice selected, it gets rid of loss multiplier option
 - Add win particle effect
+- Add statistics window

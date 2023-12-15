@@ -1,26 +1,29 @@
 * {
-    color: white;
-    background-color: #1A1C24;
-    width: 350px;
-    margin: 0;
-    padding: 10px;
-    font-family: "flama";
-    font-weight: 700;
-    font-size: 20px
-  }
+  color: white;
+  background-color: #1A1C24;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  font-family: "flama";
+  font-weight: 700;
+  font-size: 20px;
+  padding-right: 10px;
+}
 
-  h1 {
-    color: #FFF  }
+h1 {
+  color: #FFF;
+}
 
 input {
-    border-radius: .25rem 0 0 .25rem;
-    background-color: #141419;
-    border-color: #333541;
-    border-width: 1px;
-  }
-  
-  input[type="radio"] {
-    display: none;
+  border-radius: .25rem 0 0 .25rem;
+  background-color: #141419;
+  border-color: #333541;
+  border-width: 1px;
+  width: 100%;
+}
+
+input[type="radio"] {
+  display: none;
 }
 
 input[type="radio"]:checked + label img {
@@ -30,20 +33,22 @@ input[type="radio"]:checked + label img {
 }
 
 .mode {
-  width: 350px;
+  width: 100%;
 }
-  
+
 .mode-buttons {
   display: flex;
   justify-content: space-between;
   overflow: visible;
+  width: 100%;
 }
 
 .mode-buttons img {
-  width: 100px;
-  margin-right: 20px;
+  width: 50%;
+  margin-right: 0px;
   box-shadow: 0 0 10px transparent, 0 0 15px transparent, 0 0 20px transparent, 0 0 25px transparent, 0 0 30px transparent;
   cursor: pointer;
+
 }
 
 .settings {
@@ -52,7 +57,7 @@ input[type="radio"]:checked + label img {
 }
 
 .start-div {
-  width: 100%
+  width: 100%;
 }
 
 .start {
@@ -75,6 +80,8 @@ input[type="radio"]:checked + label img {
   align-items: center;
   cursor: pointer;
   width: 100%;
+  padding-right: 10px;
+  margin-right: 10px;
 }
 
 .start:hover, .stop:hover {
