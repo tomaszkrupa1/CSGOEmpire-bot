@@ -2,22 +2,35 @@ document.getElementById('startStopButton').addEventListener('click', function() 
   var button = document.getElementById('startStopButton');
   var initialBetInput = document.getElementById('initialBet');
   var lossMultiplierInput = document.getElementById('lossMultiplier');
+  var radioButtons = document.getElementsByName('mode');
+
   if (button.innerHTML === "START") {
     button.innerHTML = "STOP";
     button.classList.remove("start");
     button.classList.add("stop");
-
-    // Disable the input fields
     initialBetInput.disabled = true;
     lossMultiplierInput.disabled = true;
+    for (var i = 0; i < radioButtons.length; i++) {
+      radioButtons[i].disabled = true;
+    }
   } else {
     button.innerHTML = "START";
     button.classList.remove("stop");
     button.classList.add("start");
-
-     // Enable the input fields
      initialBetInput.disabled = false;
      lossMultiplierInput.disabled = false;
+     for (var i = 0; i < radioButtons.length; i++) {
+      radioButtons[i].disabled = false;
+    }
+  }
+});
+
+document.getElementById('toggleStatsButton').addEventListener('click', function() {
+  var statisticsBar = document.getElementById('statisticsBar');
+  if (statisticsBar.style.display === 'none') {
+    statisticsBar.style.display = 'flex';
+  } else {
+    statisticsBar.style.display = 'none';
   }
 });
 
@@ -39,6 +52,19 @@ radioButton.addEventListener('change', function() {
 // Get all the radio buttons
 var radioButtons = document.getElementsByName('mode');
 
+// Variable to store the selected mode
+var selectedMode;
+
+// Loop through all the radio buttons
+for (var i = 0; i < radioButtons.length; i++) {
+  // If the radio button is selected
+  if (radioButtons[i].checked) {
+    // Store the value of the radio button in the selectedMode variable
+    selectedMode = radioButtons[i].value;
+    break;
+  }
+}
+
 // Add an event listener to each radio button
 for (var i = 0; i < radioButtons.length; i++) {
   radioButtons[i].addEventListener('change', function() {
@@ -48,6 +74,33 @@ for (var i = 0; i < radioButtons.length; i++) {
     }
   });
 }
+
+document.getElementById('initialBet').addEventListener('change', function() {
+  this.value = (Math.round(this.value / this.step) * this.step).toFixed(2);
+});
+
+document.getElementById('lossMultiplier').addEventListener('change', function() {
+  this.value = (Math.round(this.value / this.step) * this.step).toFixed(1);
+});
+
+
+//STATISTICS BAR
+function updateStatisticsBar(win) {
+  var lossesElement = document.getElementById('losses');
+  var winsElement = document.getElementById('wins');
+
+  if (win) {
+    var wins = parseInt(winsElement.textContent);
+    winsElement.textContent = (wins + 1) + ' ';
+  } else {
+    var losses = parseInt(lossesElement.textContent);
+    lossesElement.textContent = (losses + 1) + ' ';
+  }
+}
+
+// Call this function with true for a win and false for a loss
+// updateStatisticsBar(true);
+// updateStatisticsBar(false);
 
 /*
 
@@ -113,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   */
   
-  function startScript(initialBet, lossMultiplier) {
+  function startScript(initialBet, lossMultiplier, mode) {
     ///  WEBPAGE ELEMENTS  \\\
 
 // Bet input field - document.getElementsByClassName("relative z-10 h-full w-full bg-transparent")[0].value
@@ -251,7 +304,36 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementsByClassName("previous-rolls-item")[19].children[0]
         .className == "coin-ct ml-1 inline-block h-24 w-24 rounded-full"
     ) {
-      currentBet = 0.01;
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+      currentBet = initialBet;
+
+      for (i = 0; i < currentBet * 100; i++) {
+        document.getElementsByClassName("bet-input__control")[1].click();
+      }
+
+      processCounter = 0;
+    } else {
+      currentBet *= lossMultiplier;
+      processCounter = 3;
+    }
+
+  }
+// If last round was T, resets the bet back to inital, if not, doubles.
+  function T() {
+    if (
+      document.getElementsByClassName("previous-rolls-item")[19].children[0]
+        .className == "coin-t ml-1 inline-block h-24 w-24 rounded-full"
+    ) {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+      currentBet = initialBet;
 
       for (i = 0; i < currentBet * 100; i++) {
         document.getElementsByClassName("bet-input__control")[1].click();
