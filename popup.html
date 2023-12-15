@@ -4,16 +4,30 @@
   <title>CSGO Auto Bet Extension</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.cdnfonts.com/css/flama" rel="stylesheet">
-  <script src="popup.js"></script>
 </head>
 <body>
   <div><h1>CSGOEMPIRE BOT</h1></div>
-  <div>
-    <div class="mode">
-      <img src="images/ct-coin.webp">
-      <img src="images/t-coin.webp">
-      <img src="images/d-coin.webp">
-      <img src="images/r-coin.webp">
+  <div class="mode">
+    <div class="mode-buttons">
+      <input type="radio" id="ct-coin" name="mode" value="ct-coin">
+      <label for="ct-coin">
+        <img src="images/ct-coin.webp">
+      </label>
+    
+      <input type="radio" id="t-coin" name="mode" value="t-coin">
+      <label for="t-coin">
+        <img src="images/t-coin.webp">
+      </label>
+    
+      <input type="radio" id="d-coin" name="mode" value="d-coin">
+      <label for="d-coin">
+        <img src="images/d-coin.webp">
+      </label>
+    
+      <input type="radio" id="r-coin" name="mode" value="r-coin">
+      <label for="r-coin">
+        <img src="images/r-coin.webp">
+      </label>
     </div>
   </div>
 
@@ -24,7 +38,8 @@
       <input type="number" id="lossMultiplier" step="0.1" value="2"></div>
   </div>
 
-  <div class="start-div"><button class="start">START</button></div>
+  <div class="start-div"><button class="start" id="startStopButton">START</button></div>
+  <script src="popup.js"></script>
 </body>
 </html>
 

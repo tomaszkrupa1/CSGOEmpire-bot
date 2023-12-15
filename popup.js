@@ -1,3 +1,20 @@
+document.getElementById('startStopButton').addEventListener('click', function() {
+  var button = document.getElementById('startStopButton');
+  if (button.innerHTML === "START") {
+    button.innerHTML = "STOP";
+    button.classList.remove("start");
+    button.classList.add("stop");
+  } else {
+    button.innerHTML = "START";
+    button.classList.remove("stop");
+    button.classList.add("start");
+  }
+});
+
+/*
+
+OLD CODE
+
 document.addEventListener('DOMContentLoaded', function() {
     const startStopButton = document.getElementById('startStopButton');
   const initialBetInput = document.getElementById('initialBet');
@@ -9,6 +26,20 @@ document.addEventListener('DOMContentLoaded', function() {
         lossMultiplierInput.value = result.lossMultiplier || 2;
       });
   
+
+      document.getElementById('startStopButton').addEventListener('click', function() {
+        var button = document.getElementById('startStopButton');
+        if (button.innerHTML === "START") {
+          button.innerHTML = "STOP";
+          button.classList.remove("start");
+          button.classList.add("stop");
+        } else {
+          button.innerHTML = "START";
+          button.classList.remove("stop");
+          button.classList.add("start");
+        }
+      });
+
     startStopButton.addEventListener('click', function() {
       if (isRunning) {
         chrome.scripting.executeScript({
@@ -42,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
       tabId = tabs[0].id;
     });
   });
+  */
   
   function startScript(initialBet, lossMultiplier) {
     ///  WEBPAGE ELEMENTS  \\\

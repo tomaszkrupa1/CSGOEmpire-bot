@@ -42,3 +42,5 @@ In the future updates I would like to...
 - Add dice chaser
 - Keep a global variable of the amount bet to avoid rounding errors
 - Publish to chrome store
+- If dice selected, it gets rid of loss multiplier option
+- Add win particle effect
