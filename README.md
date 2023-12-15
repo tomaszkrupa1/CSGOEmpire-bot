@@ -40,5 +40,5 @@ In the future updates I would like to...
 - Update icons in pack
 - Finish the styling
 - Add dice chaser
-
+- Keep a global variable of the amount bet to avoid rounding errors
 - Publish to chrome store

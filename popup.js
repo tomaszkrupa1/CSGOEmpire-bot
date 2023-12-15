@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ///   FUNCTIONS   \\\
 
+//ADD DICE CHASER MODE 
+
+
 
   let processCounter = 1;
   let currentBet = initialBet;

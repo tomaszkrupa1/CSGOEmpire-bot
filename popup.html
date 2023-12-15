@@ -2,15 +2,31 @@
 <html>
 <head>
   <title>CSGO Auto Bet Extension</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.cdnfonts.com/css/flama" rel="stylesheet">
+  <script src="popup.js"></script>
 </head>
 <body>
-  <h2>CSGO Auto Bet Extension</h2>
-  <label for="initialBet">Initial Bet:</label>
-  <input type="number" id="initialBet" step="0.01" value="0.01"><br><br>
-  <label for="lossMultiplier">Loss Multiplier:</label>
-  <input type="number" id="lossMultiplier" step="0.01" value="2"><br><br>
-  <button id="startStopButton">Start</button>
-  <script src="popup.js"></script>
+  <div><h1>CSGOEMPIRE BOT</h1></div>
+  <div>
+    <div class="mode">
+      <img src="images/ct-coin.webp">
+      <img src="images/t-coin.webp">
+      <img src="images/d-coin.webp">
+      <img src="images/r-coin.webp">
+    </div>
+  </div>
+
+  <div class="settings">
+    <div><label for="initialBet">Initial Bet:</label>
+      <input type="number" id="initialBet" step="0.01" value="0.01"></div>
+    <div> <label for="lossMultiplier">Loss Multiplier:</label>
+      <input type="number" id="lossMultiplier" step="0.1" value="2"></div>
+  </div>
+
+  <div class="start-div"><button class="start">START</button></div>
 </body>
 </html>
+
+
+

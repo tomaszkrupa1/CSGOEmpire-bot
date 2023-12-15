@@ -1,6 +1,57 @@
-body {
+* {
     color: white;
-    background-color: #333541;
+    background-color: #1A1C24;
     width: 200px;
+    margin: 0;
     padding: 10px;
+    font-family: "flama";
+    font-weight: 700;
   }
+
+  h1 {
+    color: #FFF  }
+
+input {
+    border-radius: .25rem 0 0 .25rem;
+    background-color: #141419;
+    border-color: #333541;
+    border-width: 1px;
+    
+  }
+
+.mode {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings {
+  display: flex;
+}
+
+.start {
+  color: #141419;
+  background-color: #E9B10E;
+  box-shadow: inset 0 -2px #cc6c31;
+  border: none;
+  border-radius: 4px;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+
+
+
+  /* 
+  
+
+  #9293A6 - TEXT
+  #24252F - 
+  #333541 - 
+  #262832 - LIGHTER
+  #1A1C24 - MID MAIN BACKGROUND COLOR
+  #141419 - DARK
+  
+  #16171C
+  
+  */
