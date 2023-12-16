@@ -25,14 +25,7 @@ document.getElementById('startStopButton').addEventListener('click', function() 
   }
 });
 
-document.getElementById('toggleStatsButton').addEventListener('click', function() {
-  var statisticsBar = document.getElementById('statisticsBar');
-  if (statisticsBar.style.display === 'none') {
-    statisticsBar.style.display = 'flex';
-  } else {
-    statisticsBar.style.display = 'none';
-  }
-});
+
 
 // Get the third radio button and the lossMultiplier field
 var radioButton = document.getElementById('d-coin');
@@ -166,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   */
   
-  function startScript(initialBet, lossMultiplier, mode) {
+  function startScript(initialBet, lossMultiplier, selectedMode) {
     ///  WEBPAGE ELEMENTS  \\\
 
 // Bet input field - document.getElementsByClassName("relative z-10 h-full w-full bg-transparent")[0].value
